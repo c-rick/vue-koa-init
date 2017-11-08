@@ -1,14 +1,18 @@
 import * as types from './mutation-types'
 export default {
-  [types.ADD_TODO] (state, { content }) {
-    state.todoList.push({ id: state.todoList.length, content, state: 'undo' })
+  [types.GET_TODOS] (state, { data }) {
+    state.todoList = data
+  },
+
+  [types.ADD_TODO] (state, { content, _id }) {
+    state.todoList.push({ _id, content, state: 'undo' })
   },
 
   [types.COMPLETE_TODO] (state, { index }) {
-    state.todoList[index].state = 'complate'
+    state.todoList[index].state = 'complete'
   },
 
-  [types.DELETE_TODO] (state, { id }) {
-    state.todoList.splice(id, 1)
+  [types.DELETE_TODO] (state, { index }) {
+    state.todoList.splice(index, 1)
   }
 }

@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <img src="./assets/logo.png">
+  <div class="main">
+    <div class="logo">
+      <img src="static/logo.png">
+      <img src="static/koa.jpg">
+    </div>
     <ul>
       <router-link to="/hello">Go to Hello</router-link>
       <router-link to="/todo">Go to Todo</router-link>
@@ -14,31 +17,37 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+#app
+  font-family 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  text-align center
+  color #2c3e50
+  margin-top 60px
+  .main
+    display flex
+    flex-direction column
+    align-items center
+    justify-content row
+    .logo
+    display flex
+    align-items center
+    position relative
+      img
+        width 200px
+      img:nth-child(1)
+        width 100px
 
-h1, h2 {
-  font-weight: normal;
-}
+  h1, h2
+  font-weight normal
+  ul
+    list-style-type none
+    padding 0
+  li
+    display inline-block
+    margin 0 10px
+  a
+    color #42b983
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

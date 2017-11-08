@@ -24,15 +24,16 @@ app.use(requinfo())
 router.use('/', indexRouter.routes(), indexRouter.allowedMethods())
 router.use('/api', apiRouter.routes(), apiRouter.allowedMethods())
 app.use(router.routes(), router.allowedMethods())
-app.use(ctx => {
+
+app.use((ctx) => {
   ctx.render('index.html')
 })
 
 MongoClient.connect(config.mongoUrl, (err, instance) => {
   if (err) { throw err }
   app.context.db = instance;
-  app.listen(8077, () => {
-    console.log('server is running in 8077')
+  app.listen(3001, () => {
+    console.log('server is running in 3001')
   })
 })
 

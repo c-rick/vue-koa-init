@@ -1,9 +1,10 @@
-export const todos = state => {
-  return state.todoList.map(todo => {
-    return {
-      id: `(${todo.id + 1})`,
-      content: `内容：${todo.content}`,
-      state: todo.state
-    }
-  })
-}
+export const todos = (state) => state.todoList.map(function (todo, index) {
+  return {
+    id: `(${index + 1})`,
+    _id: todo._id,
+    content: `内容：${todo.content}`,
+    state: todo.state
+  }
+})
+
+

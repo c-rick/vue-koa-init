@@ -2,12 +2,12 @@
   <div>
     <input type="text"  @keyup.enter="addfilter" @blur="addfilter" />
     <ul v-if="todos.length">
-      <p v-for="(item,index) in todos">
+      <p v-for="(item, index) in todos" :key="item._id">
         <span>{{item.id}}</span>
         <span>{{item.content}}</span>
         <span :class="item.state">{{item.state}}</span>
-        <button v-if="item.state !== 'complete'" @click="completeTodo(index)">完成</button>
-        <button @click="deleteTodo(index)">x</button>
+        <button v-if="item.state !== 'complete'" @click="completeTodo({ _id: item._id, index })">完成</button>
+        <button @click="deleteTodo({ _id: item._id, index })">x</button>
       </p>
     </ul>
   </div>
@@ -16,10 +16,8 @@
 import { mapActions } from 'vuex'
 
 export default {
-  data () {
-    return {
-      todoList: []
-    }
+  mounted () {
+    this.$store.dispatch('getTodos')
   },
   computed: {
     todos () {
@@ -34,7 +32,7 @@ export default {
         e.target.value = ''
       }
     }
-  }, mapActions(['addTodo', 'completeTodo', 'deleteTodo']))
+  }, mapActions(['getTodos', 'addTodo', 'completeTodo', 'deleteTodo']))
 }
 </script>
 <style>
