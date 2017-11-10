@@ -1,7 +1,6 @@
 
 var path = require('path')
 var webpack = require('webpack')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './client/main.js',
@@ -82,14 +81,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'static'),
-        to: path.resolve(__dirname, 'dist/static'),
-        ignore: ['.*']
-      }
-    ])
+    })
   ])
 }
 

@@ -1,8 +1,8 @@
 <template>
   <div class="main">
     <div class="logo">
-      <img src="static/logo.png">
-      <img src="static/koa.jpg">
+      <img src="./assest/logo.png">
+      <img src="./assest/koa.jpg">
     </div>
     <ul>
       <router-link to="/hello">Go to Hello</router-link>
