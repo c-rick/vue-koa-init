@@ -1,6 +1,6 @@
-# mobilestate
+## Content
 
-Vue and Koa init 
+Vue and Koa todo Scaffolding
 
 ## Build Setup
 
@@ -20,4 +20,4 @@ npm start
 # clean dist
 npm clean
 ```
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+

@@ -1,9 +1,8 @@
 {
-  "name": "mobilestate",
+  "name": "vue-koa-init",
   "description": "vue-koa-init",
   "version": "1.0.0",
-  "author": "czr <1196363729@qq.com>",
-  "private": true,
+  "author": "czr <2016caicai>",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",

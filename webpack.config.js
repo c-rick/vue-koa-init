@@ -92,11 +92,4 @@ if (process.env.NODE_ENV === 'production') {
     ])
   ])
 }
-var path = require('path')
-var webpack = require('webpack')
-
-
-function resolve (dir) {
-  return path.join(__dirname, './', dir)
-}
 
