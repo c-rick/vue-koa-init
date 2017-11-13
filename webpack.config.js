@@ -2,6 +2,8 @@
 var path = require('path')
 var webpack = require('webpack')
 
+process.noDeprecation = true;
+
 module.exports = {
   entry: './client/main.js',
   output: {
@@ -33,10 +35,12 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
+        use: [{
+          loader: "file-loader",
+          options: {
+           name: "[name].[ext]?[hash]"
+          }
+         }]
       },
       {
         test: /\.css$/,
